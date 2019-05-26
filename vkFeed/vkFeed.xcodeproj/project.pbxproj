@@ -8,20 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		CF59D706229AE22D0079E462 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF59D705229AE22D0079E462 /* AppDelegate.swift */; };
-		CF59D708229AE22D0079E462 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF59D707229AE22D0079E462 /* ViewController.swift */; };
-		CF59D70B229AE22D0079E462 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF59D709229AE22D0079E462 /* Main.storyboard */; };
 		CF59D70D229AE22F0079E462 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF59D70C229AE22F0079E462 /* Assets.xcassets */; };
 		CF59D710229AE22F0079E462 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF59D70E229AE22F0079E462 /* LaunchScreen.storyboard */; };
+		CF59D719229AE7DB0079E462 /* VKSdkFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF59D718229AE7DB0079E462 /* VKSdkFramework.framework */; };
+		CF81AAA9229AED7700D3CC01 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF81AAA8229AED7700D3CC01 /* AuthService.swift */; };
+		CF81AAAC229AF01300D3CC01 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF81AAAB229AF01300D3CC01 /* AuthViewController.swift */; };
+		CF81AAAE229AF02600D3CC01 /* AuthViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF81AAAD229AF02600D3CC01 /* AuthViewController.storyboard */; };
+		CF81AAB1229AFE4600D3CC01 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF81AAB0229AFE4600D3CC01 /* FeedViewController.swift */; };
+		CF81AAB3229AFE5800D3CC01 /* FeedViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF81AAB2229AFE5800D3CC01 /* FeedViewController.storyboard */; };
+		CF81AAB5229B007C00D3CC01 /* UIViewController + Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF81AAB4229B007C00D3CC01 /* UIViewController + Storyboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CF59D702229AE22D0079E462 /* vkFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vkFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF59D705229AE22D0079E462 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CF59D707229AE22D0079E462 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CF59D70A229AE22D0079E462 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CF59D70C229AE22F0079E462 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF59D70F229AE22F0079E462 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF59D711229AE22F0079E462 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF59D718229AE7DB0079E462 /* VKSdkFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VKSdkFramework.framework; path = Carthage/Build/iOS/VKSdkFramework.framework; sourceTree = "<group>"; };
+		CF81AAA8229AED7700D3CC01 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		CF81AAAB229AF01300D3CC01 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		CF81AAAD229AF02600D3CC01 /* AuthViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthViewController.storyboard; sourceTree = "<group>"; };
+		CF81AAB0229AFE4600D3CC01 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		CF81AAB2229AFE5800D3CC01 /* FeedViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedViewController.storyboard; sourceTree = "<group>"; };
+		CF81AAB4229B007C00D3CC01 /* UIViewController + Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Storyboard.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF59D719229AE7DB0079E462 /* VKSdkFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +51,7 @@
 			children = (
 				CF59D704229AE22D0079E462 /* vkFeed */,
 				CF59D703229AE22D0079E462 /* Products */,
+				CF59D717229AE7DB0079E462 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +67,49 @@
 			isa = PBXGroup;
 			children = (
 				CF59D705229AE22D0079E462 /* AppDelegate.swift */,
-				CF59D707229AE22D0079E462 /* ViewController.swift */,
-				CF59D709229AE22D0079E462 /* Main.storyboard */,
+				CF81AAAF229AF03B00D3CC01 /* Auth */,
+				CF81AAB6229B008A00D3CC01 /* Helpers */,
+				CF81AAB0229AFE4600D3CC01 /* FeedViewController.swift */,
+				CF81AAB2229AFE5800D3CC01 /* FeedViewController.storyboard */,
+				CF81AAAA229AED7E00D3CC01 /* Services */,
 				CF59D70C229AE22F0079E462 /* Assets.xcassets */,
 				CF59D70E229AE22F0079E462 /* LaunchScreen.storyboard */,
 				CF59D711229AE22F0079E462 /* Info.plist */,
 			);
 			path = vkFeed;
+			sourceTree = "<group>";
+		};
+		CF59D717229AE7DB0079E462 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CF59D718229AE7DB0079E462 /* VKSdkFramework.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CF81AAAA229AED7E00D3CC01 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CF81AAA8229AED7700D3CC01 /* AuthService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		CF81AAAF229AF03B00D3CC01 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				CF81AAAB229AF01300D3CC01 /* AuthViewController.swift */,
+				CF81AAAD229AF02600D3CC01 /* AuthViewController.storyboard */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		CF81AAB6229B008A00D3CC01 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CF81AAB4229B007C00D3CC01 /* UIViewController + Storyboard.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +122,7 @@
 				CF59D6FE229AE22D0079E462 /* Sources */,
 				CF59D6FF229AE22D0079E462 /* Frameworks */,
 				CF59D700229AE22D0079E462 /* Resources */,
+				CF59D71A229AE8020079E462 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -123,19 +172,44 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF59D710229AE22F0079E462 /* LaunchScreen.storyboard in Resources */,
+				CF81AAAE229AF02600D3CC01 /* AuthViewController.storyboard in Resources */,
 				CF59D70D229AE22F0079E462 /* Assets.xcassets in Resources */,
-				CF59D70B229AE22D0079E462 /* Main.storyboard in Resources */,
+				CF81AAB3229AFE5800D3CC01 /* FeedViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CF59D71A229AE8020079E462 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/VKSdkFramework.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CF59D6FE229AE22D0079E462 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF59D708229AE22D0079E462 /* ViewController.swift in Sources */,
+				CF81AAA9229AED7700D3CC01 /* AuthService.swift in Sources */,
+				CF81AAB5229B007C00D3CC01 /* UIViewController + Storyboard.swift in Sources */,
+				CF81AAAC229AF01300D3CC01 /* AuthViewController.swift in Sources */,
+				CF81AAB1229AFE4600D3CC01 /* FeedViewController.swift in Sources */,
 				CF59D706229AE22D0079E462 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,14 +217,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CF59D709229AE22D0079E462 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CF59D70A229AE22D0079E462 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CF59D70E229AE22F0079E462 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -282,8 +348,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 47M342TKQP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = vkFeed/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -291,6 +362,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Spiralka.vkFeed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -300,8 +372,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 47M342TKQP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = vkFeed/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -309,6 +386,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Spiralka.vkFeed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
