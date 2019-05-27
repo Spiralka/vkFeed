@@ -17,6 +17,8 @@
 		CF81AAB1229AFE4600D3CC01 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF81AAB0229AFE4600D3CC01 /* FeedViewController.swift */; };
 		CF81AAB3229AFE5800D3CC01 /* FeedViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF81AAB2229AFE5800D3CC01 /* FeedViewController.storyboard */; };
 		CF81AAB5229B007C00D3CC01 /* UIViewController + Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF81AAB4229B007C00D3CC01 /* UIViewController + Storyboard.swift */; };
+		CF916F0B229C314D009AA225 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF916F0A229C314D009AA225 /* NetworkService.swift */; };
+		CF916F0D229C31EC009AA225 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF916F0C229C31EC009AA225 /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		CF81AAB0229AFE4600D3CC01 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		CF81AAB2229AFE5800D3CC01 /* FeedViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedViewController.storyboard; sourceTree = "<group>"; };
 		CF81AAB4229B007C00D3CC01 /* UIViewController + Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Storyboard.swift"; sourceTree = "<group>"; };
+		CF916F0A229C314D009AA225 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		CF916F0C229C31EC009AA225 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,8 +73,7 @@
 				CF59D705229AE22D0079E462 /* AppDelegate.swift */,
 				CF81AAAF229AF03B00D3CC01 /* Auth */,
 				CF81AAB6229B008A00D3CC01 /* Helpers */,
-				CF81AAB0229AFE4600D3CC01 /* FeedViewController.swift */,
-				CF81AAB2229AFE5800D3CC01 /* FeedViewController.storyboard */,
+				CF916F09229C312D009AA225 /* FeedViewController */,
 				CF81AAAA229AED7E00D3CC01 /* Services */,
 				CF59D70C229AE22F0079E462 /* Assets.xcassets */,
 				CF59D70E229AE22F0079E462 /* LaunchScreen.storyboard */,
@@ -91,6 +94,8 @@
 			isa = PBXGroup;
 			children = (
 				CF81AAA8229AED7700D3CC01 /* AuthService.swift */,
+				CF916F0A229C314D009AA225 /* NetworkService.swift */,
+				CF916F0C229C31EC009AA225 /* API.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -110,6 +115,15 @@
 				CF81AAB4229B007C00D3CC01 /* UIViewController + Storyboard.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CF916F09229C312D009AA225 /* FeedViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CF81AAB0229AFE4600D3CC01 /* FeedViewController.swift */,
+				CF81AAB2229AFE5800D3CC01 /* FeedViewController.storyboard */,
+			);
+			path = FeedViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,7 +224,9 @@
 				CF81AAB5229B007C00D3CC01 /* UIViewController + Storyboard.swift in Sources */,
 				CF81AAAC229AF01300D3CC01 /* AuthViewController.swift in Sources */,
 				CF81AAB1229AFE4600D3CC01 /* FeedViewController.swift in Sources */,
+				CF916F0B229C314D009AA225 /* NetworkService.swift in Sources */,
 				CF59D706229AE22D0079E462 /* AppDelegate.swift in Sources */,
+				CF916F0D229C31EC009AA225 /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
