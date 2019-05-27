@@ -14,7 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AuthServiceDelegate {
     
     
     var window: UIWindow?
-    
     var authService: AuthService!
     
     static func shared() -> AppDelegate {

@@ -14,8 +14,7 @@ class AuthViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //authService = AuthService()
-        // Do any additional setup after loading the view.
+     
         authService = AppDelegate.shared().authService
     }
     
