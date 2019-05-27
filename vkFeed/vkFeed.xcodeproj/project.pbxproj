@@ -19,6 +19,8 @@
 		CF81AAB5229B007C00D3CC01 /* UIViewController + Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF81AAB4229B007C00D3CC01 /* UIViewController + Storyboard.swift */; };
 		CF916F0B229C314D009AA225 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF916F0A229C314D009AA225 /* NetworkService.swift */; };
 		CF916F0D229C31EC009AA225 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF916F0C229C31EC009AA225 /* API.swift */; };
+		CF916F10229C6287009AA225 /* FeedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF916F0F229C6287009AA225 /* FeedResponse.swift */; };
+		CF916F12229C6638009AA225 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF916F11229C6638009AA225 /* NetworkDataFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		CF81AAB4229B007C00D3CC01 /* UIViewController + Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Storyboard.swift"; sourceTree = "<group>"; };
 		CF916F0A229C314D009AA225 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		CF916F0C229C31EC009AA225 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		CF916F0F229C6287009AA225 /* FeedResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedResponse.swift; sourceTree = "<group>"; };
+		CF916F11229C6638009AA225 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,9 +97,11 @@
 		CF81AAAA229AED7E00D3CC01 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				CF916F0E229C6275009AA225 /* Models */,
 				CF81AAA8229AED7700D3CC01 /* AuthService.swift */,
 				CF916F0A229C314D009AA225 /* NetworkService.swift */,
 				CF916F0C229C31EC009AA225 /* API.swift */,
+				CF916F11229C6638009AA225 /* NetworkDataFetcher.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -124,6 +130,14 @@
 				CF81AAB2229AFE5800D3CC01 /* FeedViewController.storyboard */,
 			);
 			path = FeedViewController;
+			sourceTree = "<group>";
+		};
+		CF916F0E229C6275009AA225 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CF916F0F229C6287009AA225 /* FeedResponse.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,11 +234,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF916F10229C6287009AA225 /* FeedResponse.swift in Sources */,
 				CF81AAA9229AED7700D3CC01 /* AuthService.swift in Sources */,
 				CF81AAB5229B007C00D3CC01 /* UIViewController + Storyboard.swift in Sources */,
 				CF81AAAC229AF01300D3CC01 /* AuthViewController.swift in Sources */,
 				CF81AAB1229AFE4600D3CC01 /* FeedViewController.swift in Sources */,
 				CF916F0B229C314D009AA225 /* NetworkService.swift in Sources */,
+				CF916F12229C6638009AA225 /* NetworkDataFetcher.swift in Sources */,
 				CF59D706229AE22D0079E462 /* AppDelegate.swift in Sources */,
 				CF916F0D229C31EC009AA225 /* API.swift in Sources */,
 			);

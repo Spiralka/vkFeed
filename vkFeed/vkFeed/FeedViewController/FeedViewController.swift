@@ -11,26 +11,23 @@ import VKSdkFramework
 
 class FeedViewController: UIViewController {
     
-    private let networkService: Networking = NetworkService()
+    private var fetcher: DataFetcher = NetwoorkDataFetcher(networking: NetworkService())
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 1, green: 0.3005838394, blue: 0.2565174997, alpha: 1)
-        let params = ["filters": "post, photo"]
+        fetcher.getFeed { (feedResponse) in
+            guard let feedResponse = feedResponse else {return}
+            feedResponse.items.map({ (feedItem) in
+                print(feedItem.date)
+            })
+        }
         
-        networkService.request(path: API.newsFeed, params: params) { (data, error) in
-            if let error = error {
-                print("вечер добрый", error)
-            }
-            guard let data = data else { return }
-           
-            let json = try? JSONSerialization.jsonObject(with: data, options: [])
 
-            print(json ?? "nil bratan")
         }
 
         
     }
     
 
-}
+
