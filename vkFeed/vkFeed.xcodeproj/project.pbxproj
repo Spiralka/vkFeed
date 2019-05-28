@@ -20,6 +20,7 @@
 		CF59D70D229AE22F0079E462 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF59D70C229AE22F0079E462 /* Assets.xcassets */; };
 		CF59D710229AE22F0079E462 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF59D70E229AE22F0079E462 /* LaunchScreen.storyboard */; };
 		CF59D719229AE7DB0079E462 /* VKSdkFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF59D718229AE7DB0079E462 /* VKSdkFramework.framework */; };
+		CF718ED2229D716F0059A762 /* WebImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF718ED1229D716F0059A762 /* WebImageView.swift */; };
 		CF81AAA9229AED7700D3CC01 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF81AAA8229AED7700D3CC01 /* AuthService.swift */; };
 		CF81AAAC229AF01300D3CC01 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF81AAAB229AF01300D3CC01 /* AuthViewController.swift */; };
 		CF81AAAE229AF02600D3CC01 /* AuthViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF81AAAD229AF02600D3CC01 /* AuthViewController.storyboard */; };
@@ -46,6 +47,7 @@
 		CF59D70F229AE22F0079E462 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF59D711229AE22F0079E462 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF59D718229AE7DB0079E462 /* VKSdkFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VKSdkFramework.framework; path = Carthage/Build/iOS/VKSdkFramework.framework; sourceTree = "<group>"; };
+		CF718ED1229D716F0059A762 /* WebImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebImageView.swift; sourceTree = "<group>"; };
 		CF81AAA8229AED7700D3CC01 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		CF81AAAB229AF01300D3CC01 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		CF81AAAD229AF02600D3CC01 /* AuthViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthViewController.storyboard; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				CF81AAB4229B007C00D3CC01 /* UIViewController + Storyboard.swift */,
+				CF718ED1229D716F0059A762 /* WebImageView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				CF916F0B229C314D009AA225 /* NetworkService.swift in Sources */,
 				CF916F12229C6638009AA225 /* NetworkDataFetcher.swift in Sources */,
 				CF149849229C6C4E005F9DA5 /* NewsFeedWorker.swift in Sources */,
+				CF718ED2229D716F0059A762 /* WebImageView.swift in Sources */,
 				CF14984A229C6C4E005F9DA5 /* NewsFeedRouter.swift in Sources */,
 				CF59D706229AE22D0079E462 /* AppDelegate.swift in Sources */,
 				CF916F0D229C31EC009AA225 /* API.swift in Sources */,
