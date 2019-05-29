@@ -21,6 +21,7 @@
 		CF59D710229AE22F0079E462 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF59D70E229AE22F0079E462 /* LaunchScreen.storyboard */; };
 		CF59D719229AE7DB0079E462 /* VKSdkFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF59D718229AE7DB0079E462 /* VKSdkFramework.framework */; };
 		CF718ED2229D716F0059A762 /* WebImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF718ED1229D716F0059A762 /* WebImageView.swift */; };
+		CF718ED4229ECBD00059A762 /* NewsFeedCellLayoutCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF718ED3229ECBD00059A762 /* NewsFeedCellLayoutCalculator.swift */; };
 		CF81AAA9229AED7700D3CC01 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF81AAA8229AED7700D3CC01 /* AuthService.swift */; };
 		CF81AAAC229AF01300D3CC01 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF81AAAB229AF01300D3CC01 /* AuthViewController.swift */; };
 		CF81AAAE229AF02600D3CC01 /* AuthViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF81AAAD229AF02600D3CC01 /* AuthViewController.storyboard */; };
@@ -48,6 +49,7 @@
 		CF59D711229AE22F0079E462 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF59D718229AE7DB0079E462 /* VKSdkFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VKSdkFramework.framework; path = Carthage/Build/iOS/VKSdkFramework.framework; sourceTree = "<group>"; };
 		CF718ED1229D716F0059A762 /* WebImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebImageView.swift; sourceTree = "<group>"; };
+		CF718ED3229ECBD00059A762 /* NewsFeedCellLayoutCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedCellLayoutCalculator.swift; sourceTree = "<group>"; };
 		CF81AAA8229AED7700D3CC01 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		CF81AAAB229AF01300D3CC01 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		CF81AAAD229AF02600D3CC01 /* AuthViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthViewController.storyboard; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				CF149852229D47BC005F9DA5 /* NewsFeedCell.swift */,
+				CF718ED3229ECBD00059A762 /* NewsFeedCellLayoutCalculator.swift */,
 				CF149854229D47F3005F9DA5 /* NewsFeedCell.xib */,
 			);
 			path = Cell;
@@ -283,6 +286,7 @@
 				CF14984B229C6C4E005F9DA5 /* NewsFeedModels.swift in Sources */,
 				CF149853229D47BC005F9DA5 /* NewsFeedCell.swift in Sources */,
 				CF14984C229C6C4E005F9DA5 /* NewsFeedViewController.swift in Sources */,
+				CF718ED4229ECBD00059A762 /* NewsFeedCellLayoutCalculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

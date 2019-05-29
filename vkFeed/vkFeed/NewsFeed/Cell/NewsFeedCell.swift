@@ -19,7 +19,13 @@ protocol FeedCellViewModel {
     var shares: String? { get }
     var views: String? { get }
     var photoAttacment: FeedCellPhotoAttachmentViewModel? { get }
+    var sizes: FeedCellSizes { get }
 
+}
+
+protocol FeedCellSizes {
+    var postLabelFrame: CGRect { get }
+    var attacmentFrame: CGRect { get }
 }
 protocol FeedCellPhotoAttachmentViewModel {
     var photoUrlString: String? { get }
@@ -64,6 +70,10 @@ class NewsFeedCell: UITableViewCell {
         commentsLabel.text = viewModel.comments
         sharesLabel.text = viewModel.shares
         viesLabel.text = viewModel.views
+        
+        postLabel.frame = viewModel.sizes.postLabelFrame
+        postImageView.frame = viewModel.sizes.attacmentFrame
+        
         if let photoAttacment = viewModel.photoAttacment {
             postImageView.isHidden = false
             postImageView.set(imageURL: photoAttacment.photoUrlString)
