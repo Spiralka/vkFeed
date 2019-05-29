@@ -22,6 +22,7 @@
 		CF59D719229AE7DB0079E462 /* VKSdkFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF59D718229AE7DB0079E462 /* VKSdkFramework.framework */; };
 		CF718ED2229D716F0059A762 /* WebImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF718ED1229D716F0059A762 /* WebImageView.swift */; };
 		CF718ED4229ECBD00059A762 /* NewsFeedCellLayoutCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF718ED3229ECBD00059A762 /* NewsFeedCellLayoutCalculator.swift */; };
+		CF718ED6229ED8A90059A762 /* String + Height.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF718ED5229ED8A90059A762 /* String + Height.swift */; };
 		CF81AAA9229AED7700D3CC01 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF81AAA8229AED7700D3CC01 /* AuthService.swift */; };
 		CF81AAAC229AF01300D3CC01 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF81AAAB229AF01300D3CC01 /* AuthViewController.swift */; };
 		CF81AAAE229AF02600D3CC01 /* AuthViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF81AAAD229AF02600D3CC01 /* AuthViewController.storyboard */; };
@@ -50,6 +51,7 @@
 		CF59D718229AE7DB0079E462 /* VKSdkFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VKSdkFramework.framework; path = Carthage/Build/iOS/VKSdkFramework.framework; sourceTree = "<group>"; };
 		CF718ED1229D716F0059A762 /* WebImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebImageView.swift; sourceTree = "<group>"; };
 		CF718ED3229ECBD00059A762 /* NewsFeedCellLayoutCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedCellLayoutCalculator.swift; sourceTree = "<group>"; };
+		CF718ED5229ED8A90059A762 /* String + Height.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Height.swift"; sourceTree = "<group>"; };
 		CF81AAA8229AED7700D3CC01 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		CF81AAAB229AF01300D3CC01 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		CF81AAAD229AF02600D3CC01 /* AuthViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthViewController.storyboard; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 			children = (
 				CF81AAB4229B007C00D3CC01 /* UIViewController + Storyboard.swift */,
 				CF718ED1229D716F0059A762 /* WebImageView.swift */,
+				CF718ED5229ED8A90059A762 /* String + Height.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF916F10229C6287009AA225 /* FeedResponse.swift in Sources */,
+				CF718ED6229ED8A90059A762 /* String + Height.swift in Sources */,
 				CF149848229C6C4E005F9DA5 /* NewsFeedPresenter.swift in Sources */,
 				CF81AAA9229AED7700D3CC01 /* AuthService.swift in Sources */,
 				CF81AAB5229B007C00D3CC01 /* UIViewController + Storyboard.swift in Sources */,
