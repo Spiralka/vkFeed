@@ -23,6 +23,8 @@
 		CF718ED2229D716F0059A762 /* WebImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF718ED1229D716F0059A762 /* WebImageView.swift */; };
 		CF718ED4229ECBD00059A762 /* NewsFeedCellLayoutCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF718ED3229ECBD00059A762 /* NewsFeedCellLayoutCalculator.swift */; };
 		CF718ED6229ED8A90059A762 /* String + Height.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF718ED5229ED8A90059A762 /* String + Height.swift */; };
+		CF718ED822A0086D0059A762 /* NewsFeedCodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF718ED722A0086D0059A762 /* NewsFeedCodeCell.swift */; };
+		CF718EDA22A00CF20059A762 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF718ED922A00CF20059A762 /* Constraints.swift */; };
 		CF81AAA9229AED7700D3CC01 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF81AAA8229AED7700D3CC01 /* AuthService.swift */; };
 		CF81AAAC229AF01300D3CC01 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF81AAAB229AF01300D3CC01 /* AuthViewController.swift */; };
 		CF81AAAE229AF02600D3CC01 /* AuthViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF81AAAD229AF02600D3CC01 /* AuthViewController.storyboard */; };
@@ -52,6 +54,8 @@
 		CF718ED1229D716F0059A762 /* WebImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebImageView.swift; sourceTree = "<group>"; };
 		CF718ED3229ECBD00059A762 /* NewsFeedCellLayoutCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedCellLayoutCalculator.swift; sourceTree = "<group>"; };
 		CF718ED5229ED8A90059A762 /* String + Height.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Height.swift"; sourceTree = "<group>"; };
+		CF718ED722A0086D0059A762 /* NewsFeedCodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedCodeCell.swift; sourceTree = "<group>"; };
+		CF718ED922A00CF20059A762 /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
 		CF81AAA8229AED7700D3CC01 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		CF81AAAB229AF01300D3CC01 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		CF81AAAD229AF02600D3CC01 /* AuthViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthViewController.storyboard; sourceTree = "<group>"; };
@@ -94,6 +98,7 @@
 			children = (
 				CF149852229D47BC005F9DA5 /* NewsFeedCell.swift */,
 				CF718ED3229ECBD00059A762 /* NewsFeedCellLayoutCalculator.swift */,
+				CF718ED722A0086D0059A762 /* NewsFeedCodeCell.swift */,
 				CF149854229D47F3005F9DA5 /* NewsFeedCell.xib */,
 			);
 			path = Cell;
@@ -166,6 +171,7 @@
 				CF81AAB4229B007C00D3CC01 /* UIViewController + Storyboard.swift */,
 				CF718ED1229D716F0059A762 /* WebImageView.swift */,
 				CF718ED5229ED8A90059A762 /* String + Height.swift */,
+				CF718ED922A00CF20059A762 /* Constraints.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -275,6 +281,7 @@
 			files = (
 				CF916F10229C6287009AA225 /* FeedResponse.swift in Sources */,
 				CF718ED6229ED8A90059A762 /* String + Height.swift in Sources */,
+				CF718ED822A0086D0059A762 /* NewsFeedCodeCell.swift in Sources */,
 				CF149848229C6C4E005F9DA5 /* NewsFeedPresenter.swift in Sources */,
 				CF81AAA9229AED7700D3CC01 /* AuthService.swift in Sources */,
 				CF81AAB5229B007C00D3CC01 /* UIViewController + Storyboard.swift in Sources */,
@@ -284,6 +291,7 @@
 				CF916F12229C6638009AA225 /* NetworkDataFetcher.swift in Sources */,
 				CF149849229C6C4E005F9DA5 /* NewsFeedWorker.swift in Sources */,
 				CF718ED2229D716F0059A762 /* WebImageView.swift in Sources */,
+				CF718EDA22A00CF20059A762 /* Constraints.swift in Sources */,
 				CF14984A229C6C4E005F9DA5 /* NewsFeedRouter.swift in Sources */,
 				CF59D706229AE22D0079E462 /* AppDelegate.swift in Sources */,
 				CF916F0D229C31EC009AA225 /* API.swift in Sources */,
