@@ -15,7 +15,6 @@ final class NewsFeedCodeCell: UITableViewCell {
     
     let cardView: UIView = {
         let view = UIView()
-        view.backgroundColor = #colorLiteral(red: 0.5725490451, green: 0, blue: 0.2313725501, alpha: 1)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -23,15 +22,13 @@ final class NewsFeedCodeCell: UITableViewCell {
     let topView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = #colorLiteral(red: 0.09019608051, green: 0, blue: 0.3019607961, alpha: 1)
         return view
     }()
     
     let postLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.backgroundColor = .red
-        label.font = Contants.postLabelFont
+        label.font = Constants.postLabelFont
         label.textColor = #colorLiteral(red: 0.227329582, green: 0.2323184013, blue: 0.2370472848, alpha: 1)
         return label
     }()
@@ -45,8 +42,31 @@ final class NewsFeedCodeCell: UITableViewCell {
     let bottomView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .yellow
         return view
+    }()
+    
+    let iconImageView: WebImageView = {
+        let imageView = WebImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
+    let nameLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        label.numberOfLines = 0
+        label.backgroundColor = .black
+        label.textColor = #colorLiteral(red: 0.227329582, green: 0.2323184013, blue: 0.2370472848, alpha: 1)
+        return label
+    }()
+    
+    let dateLabel: UILabel = {
+       let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = #colorLiteral(red: 0.5058823529, green: 0.5490196078, blue: 0.6, alpha: 1)
+        label.font = UIFont.systemFont(ofSize: 12)
+        return label
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -54,26 +74,55 @@ final class NewsFeedCodeCell: UITableViewCell {
         backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         overlayFirstLayer()
         overlaySecondLayer()
+        overlayThirdLayerOnTopView()
         
     }
     
     func set(viewModel: FeedCellViewModel) {
-
+        iconImageView.set(imageURL: viewModel.iconUrlString)
+        nameLabel.text = viewModel.name
+        dateLabel.text = viewModel.date
+        postLabel.text = viewModel.text
         postLabel.frame = viewModel.sizes.postLabelFrame
         postImageView.frame = viewModel.sizes.attacmentFrame
         bottomView.frame = viewModel.sizes.bottomViewFrame
         
         if let photoAttacment = viewModel.photoAttacment {
             postImageView.isHidden = false
-//            postImageView.set(imageURL: photoAttacment.photoUrlString)
+            postImageView.set(imageURL: photoAttacment.photoUrlString)
         } else {
             postImageView.isHidden = true
         }
     }
     
+    func overlayThirdLayerOnTopView() {
+        topView.addSubview(iconImageView)
+        topView.addSubview(nameLabel)
+        topView.addSubview(dateLabel)
+        
+        iconImageView.leadingAnchor.constraint(equalTo: topView.leadingAnchor).isActive = true
+        iconImageView.topAnchor.constraint(equalTo: topView.topAnchor).isActive = true
+        iconImageView.heightAnchor.constraint(equalToConstant: Constants.topViewHeight).isActive = true
+        iconImageView.widthAnchor.constraint(equalToConstant: Constants.topViewHeight).isActive = true
+        
+        nameLabel.leadingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: 2).isActive = true
+        nameLabel.trailingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: -2).isActive = true
+        nameLabel.topAnchor.constraint(equalTo: topView.topAnchor, constant: 4).isActive = true
+        nameLabel.heightAnchor.constraint(equalToConstant: Constants.topViewHeight / 2 - 2).isActive = true
+        
+        dateLabel.leadingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: 8).isActive = true
+        dateLabel.trailingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: -8).isActive = true
+        dateLabel.bottomAnchor.constraint(equalTo: topView.bottomAnchor, constant: -2).isActive = true
+        dateLabel.heightAnchor.constraint(equalToConstant: 14).isActive = true
+
+
+
+
+    }
+    
     func overlayFirstLayer(){
         addSubview(cardView)
-        cardView.fillSuperview(padding: Contants.cardInsets)
+        cardView.fillSuperview(padding: Constants.cardInsets)
     }
     
     func overlaySecondLayer(){
@@ -85,7 +134,7 @@ final class NewsFeedCodeCell: UITableViewCell {
         topView.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 8).isActive = true
         topView.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -8).isActive = true
         topView.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 8).isActive = true
-        topView.heightAnchor.constraint(equalToConstant: Contants.topViewHeight).isActive = true
+        topView.heightAnchor.constraint(equalToConstant: Constants.topViewHeight).isActive = true
 
 
     }
