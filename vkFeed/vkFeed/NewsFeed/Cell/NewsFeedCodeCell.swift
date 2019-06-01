@@ -35,6 +35,8 @@ final class NewsFeedCodeCell: UITableViewCell {
     
     let postImageView: WebImageView = {
         let imageView = WebImageView()
+//        imageView.layer.cornerRadius = imageView.bounds.width / 2
+//        imageView.clipsToBounds = true
         imageView.backgroundColor = #colorLiteral(red: 0.8901960784, green: 0.8980392157, blue: 0.9098039216, alpha: 1)
         return imageView
     }()
@@ -56,7 +58,6 @@ final class NewsFeedCodeCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
         label.numberOfLines = 0
-        label.backgroundColor = .black
         label.textColor = #colorLiteral(red: 0.227329582, green: 0.2323184013, blue: 0.2370472848, alpha: 1)
         return label
     }()
@@ -71,14 +72,17 @@ final class NewsFeedCodeCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         overlayFirstLayer()
         overlaySecondLayer()
         overlayThirdLayerOnTopView()
+//        iconImageView.layer.cornerRadius = iconImageView.bounds.width / 2
+//        iconImageView.clipsToBounds = true
         
     }
     
     func set(viewModel: FeedCellViewModel) {
+//        iconImageView.layer.cornerRadius = iconImageView.bounds.width / 2
+//        iconImageView.clipsToBounds = true
         iconImageView.set(imageURL: viewModel.iconUrlString)
         nameLabel.text = viewModel.name
         dateLabel.text = viewModel.date
@@ -105,16 +109,22 @@ final class NewsFeedCodeCell: UITableViewCell {
         iconImageView.heightAnchor.constraint(equalToConstant: Constants.topViewHeight).isActive = true
         iconImageView.widthAnchor.constraint(equalToConstant: Constants.topViewHeight).isActive = true
         
-        nameLabel.leadingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: 2).isActive = true
-        nameLabel.trailingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: -2).isActive = true
+        iconImageView.layer.cornerRadius = Constants.topViewHeight / 2
+        iconImageView.clipsToBounds = true
+     
+        nameLabel.leadingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: 4).isActive = true
+        nameLabel.trailingAnchor.constraint(equalTo: topView.trailingAnchor, constant: -4).isActive = true
         nameLabel.topAnchor.constraint(equalTo: topView.topAnchor, constant: 4).isActive = true
         nameLabel.heightAnchor.constraint(equalToConstant: Constants.topViewHeight / 2 - 2).isActive = true
         
-        dateLabel.leadingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: 8).isActive = true
-        dateLabel.trailingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: -8).isActive = true
+        dateLabel.leadingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: 4).isActive = true
+        dateLabel.trailingAnchor.constraint(equalTo: topView.trailingAnchor, constant: -4).isActive = true
         dateLabel.bottomAnchor.constraint(equalTo: topView.bottomAnchor, constant: -2).isActive = true
         dateLabel.heightAnchor.constraint(equalToConstant: 14).isActive = true
 
+    
+       
+        
 
 
 
