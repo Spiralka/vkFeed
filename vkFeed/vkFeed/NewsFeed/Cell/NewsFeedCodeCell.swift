@@ -35,8 +35,6 @@ final class NewsFeedCodeCell: UITableViewCell {
     
     let postImageView: WebImageView = {
         let imageView = WebImageView()
-//        imageView.layer.cornerRadius = imageView.bounds.width / 2
-//        imageView.clipsToBounds = true
         imageView.backgroundColor = #colorLiteral(red: 0.8901960784, green: 0.8980392157, blue: 0.9098039216, alpha: 1)
         return imageView
     }()
@@ -70,19 +68,44 @@ final class NewsFeedCodeCell: UITableViewCell {
         return label
     }()
     
+    //3 слой buttomView
+    
+    let likesView: UIView = {
+        let view = UIView()
+        view .translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let commentsView: UIView = {
+        let view = UIView()
+        view .translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let sharesView: UIView = {
+        let view = UIView()
+        view .translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let viewsView: UIView = {
+        let view = UIView()
+        view .translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         overlayFirstLayer()
         overlaySecondLayer()
         overlayThirdLayerOnTopView()
-//        iconImageView.layer.cornerRadius = iconImageView.bounds.width / 2
-//        iconImageView.clipsToBounds = true
+        overlayThirdLayerOnBottomView()
+
         
     }
     
     func set(viewModel: FeedCellViewModel) {
-//        iconImageView.layer.cornerRadius = iconImageView.bounds.width / 2
-//        iconImageView.clipsToBounds = true
+
         iconImageView.set(imageURL: viewModel.iconUrlString)
         nameLabel.text = viewModel.name
         dateLabel.text = viewModel.date
@@ -99,7 +122,17 @@ final class NewsFeedCodeCell: UITableViewCell {
         }
     }
     
-    func overlayThirdLayerOnTopView() {
+    private func overlayThirdLayerOnBottomView() {
+        bottomView.addSubview(likesView)
+        bottomView.addSubview(commentsView)
+        bottomView.addSubview(sharesView)
+        bottomView.addSubview(viewsView)
+        
+        likesView.anchor(top: <#T##NSLayoutYAxisAnchor?#>, leading: <#T##NSLayoutXAxisAnchor?#>, bottom: <#T##NSLayoutYAxisAnchor?#>, trailing: <#T##NSLayoutXAxisAnchor?#>, padding: <#T##UIEdgeInsets#>, size: <#T##CGSize#>)
+
+    }
+    
+   private func overlayThirdLayerOnTopView() {
         topView.addSubview(iconImageView)
         topView.addSubview(nameLabel)
         topView.addSubview(dateLabel)
@@ -108,7 +141,6 @@ final class NewsFeedCodeCell: UITableViewCell {
         iconImageView.topAnchor.constraint(equalTo: topView.topAnchor).isActive = true
         iconImageView.heightAnchor.constraint(equalToConstant: Constants.topViewHeight).isActive = true
         iconImageView.widthAnchor.constraint(equalToConstant: Constants.topViewHeight).isActive = true
-        
         iconImageView.layer.cornerRadius = Constants.topViewHeight / 2
         iconImageView.clipsToBounds = true
      
@@ -122,20 +154,15 @@ final class NewsFeedCodeCell: UITableViewCell {
         dateLabel.bottomAnchor.constraint(equalTo: topView.bottomAnchor, constant: -2).isActive = true
         dateLabel.heightAnchor.constraint(equalToConstant: 14).isActive = true
 
-    
-       
-        
-
-
 
     }
     
-    func overlayFirstLayer(){
+  private  func overlayFirstLayer(){
         addSubview(cardView)
         cardView.fillSuperview(padding: Constants.cardInsets)
     }
     
-    func overlaySecondLayer(){
+  private  func overlaySecondLayer(){
         cardView.addSubview(topView)
         cardView.addSubview(postLabel)
         cardView.addSubview(postImageView)

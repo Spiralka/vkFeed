@@ -33,7 +33,6 @@ struct NetwoorkDataFetcher: DataFetcher {
     }
     
     private func decodeJSON<T: Decodable>(type: T.Type, from: Data?) -> T? {
-       
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         guard let data = from, let response = try? decoder.decode(type.self, from: data) else {return nil}
