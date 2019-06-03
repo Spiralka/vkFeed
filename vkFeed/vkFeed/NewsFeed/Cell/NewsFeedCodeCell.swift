@@ -41,7 +41,6 @@ final class NewsFeedCodeCell: UITableViewCell {
     
     let bottomView: UIView = {
         let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
@@ -79,12 +78,14 @@ final class NewsFeedCodeCell: UITableViewCell {
     let commentsView: UIView = {
         let view = UIView()
         view .translatesAutoresizingMaskIntoConstraints = false
+
         return view
     }()
     
     let sharesView: UIView = {
         let view = UIView()
         view .translatesAutoresizingMaskIntoConstraints = false
+
         return view
     }()
     
@@ -94,12 +95,77 @@ final class NewsFeedCodeCell: UITableViewCell {
         return view
     }()
     
+    let likesImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(named: "like")
+        return imageView
+    }()
+    
+    let commentsImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(named: "comment")
+        return imageView
+    }()
+    
+    let sharesImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(named: "share")
+        return imageView
+    }()
+    
+    let viewsImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(named: "eye")
+        return imageView
+    }()
+    
+    let likesLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "457K"
+        label.textColor = #colorLiteral(red: 0.5058823529, green: 0.5490196078, blue: 0.6, alpha: 1)
+        label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        label.lineBreakMode = .byClipping
+        return label
+    }()
+    let commentsLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = #colorLiteral(red: 0.5058823529, green: 0.5490196078, blue: 0.6, alpha: 1)
+        label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        label.lineBreakMode = .byClipping
+        return label
+    }()
+    let sharesLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = #colorLiteral(red: 0.5058823529, green: 0.5490196078, blue: 0.6, alpha: 1)
+        label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        label.lineBreakMode = .byClipping
+        return label
+    }()
+    let viewsLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = #colorLiteral(red: 0.5058823529, green: 0.5490196078, blue: 0.6, alpha: 1)
+        label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        label.lineBreakMode = .byClipping
+        return label
+    }()
+    
+  
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         overlayFirstLayer()
         overlaySecondLayer()
         overlayThirdLayerOnTopView()
         overlayThirdLayerOnBottomView()
+        overlayFourthLayerOnBottomViewViews()
 
         
     }
@@ -122,13 +188,52 @@ final class NewsFeedCodeCell: UITableViewCell {
         }
     }
     
+    private func overlayFourthLayerOnBottomViewViews() {
+        likesView.addSubview(likesImage)
+        likesView.addSubview(likesLabel)
+        
+        commentsView.addSubview(commentsImage)
+        commentsView.addSubview(commentsLabel)
+        
+        sharesView.addSubview(sharesImage)
+        sharesView.addSubview(sharesLabel)
+        
+        viewsView.addSubview(viewsImage)
+        viewsView.addSubview(viewsLabel)
+        
+        helpInFourthLayer(view: likesLabel, imageView: likesImage, label: likesLabel)
+        helpInFourthLayer(view: commentsView, imageView: commentsImage, label: commentsLabel)
+        helpInFourthLayer(view: sharesView, imageView: sharesImage, label: sharesLabel)
+        helpInFourthLayer(view: viewsView, imageView: viewsImage, label: viewsLabel)
+
+
+    }
+    
+    private func helpInFourthLayer(view: UIView, imageView: UIImageView, label: UILabel) {
+        imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
+        imageView.widthAnchor.constraint(equalToConstant: Constants.bottomViewViewsIconSize).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: Constants.bottomViewViewsIconSize).isActive = true
+        
+        label.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        label.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 4).isActive = true
+        label.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+
+    }
+    
     private func overlayThirdLayerOnBottomView() {
         bottomView.addSubview(likesView)
         bottomView.addSubview(commentsView)
         bottomView.addSubview(sharesView)
         bottomView.addSubview(viewsView)
         
-        likesView.anchor(top: <#T##NSLayoutYAxisAnchor?#>, leading: <#T##NSLayoutXAxisAnchor?#>, bottom: <#T##NSLayoutYAxisAnchor?#>, trailing: <#T##NSLayoutXAxisAnchor?#>, padding: <#T##UIEdgeInsets#>, size: <#T##CGSize#>)
+        likesView.anchor(top: bottomView.topAnchor, leading: bottomView.leadingAnchor, bottom: nil, trailing: nil, size: CGSize(width: Constants.bottomViewVIewWidth, height: Constants.bottomViewHeight))
+        
+        commentsView.anchor(top: bottomView.topAnchor, leading: likesView.trailingAnchor, bottom: nil, trailing: nil, size: CGSize(width: Constants.bottomViewVIewWidth, height: Constants.bottomViewHeight))
+        
+         sharesView.anchor(top: bottomView.topAnchor, leading: commentsView.trailingAnchor, bottom: nil, trailing: nil, size: CGSize(width: Constants.bottomViewVIewWidth, height: Constants.bottomViewHeight))
+        
+         viewsView.anchor(top: bottomView.topAnchor, leading: nil, bottom: nil, trailing: bottomView.trailingAnchor, size: CGSize(width: Constants.bottomViewVIewWidth, height: Constants.bottomViewHeight))
 
     }
     
