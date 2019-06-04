@@ -78,6 +78,7 @@ class NewsFeedCell: UITableViewCell {
         commentsLabel.text = viewModel.comments
         sharesLabel.text = viewModel.shares
         viesLabel.text = viewModel.views
+        
         postLabel.frame = viewModel.sizes.postLabelFrame
         postImageView.frame = viewModel.sizes.attacmentFrame
         bottomView.frame = viewModel.sizes.bottomViewFrame

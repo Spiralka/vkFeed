@@ -15,6 +15,7 @@ final class NewsFeedCodeCell: UITableViewCell {
     
     let cardView: UIView = {
         let view = UIView()
+        view.backgroundColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -72,6 +73,7 @@ final class NewsFeedCodeCell: UITableViewCell {
     let likesView: UIView = {
         let view = UIView()
         view .translatesAutoresizingMaskIntoConstraints = false
+
         return view
     }()
     
@@ -126,7 +128,6 @@ final class NewsFeedCodeCell: UITableViewCell {
     let likesLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "457K"
         label.textColor = #colorLiteral(red: 0.5058823529, green: 0.5490196078, blue: 0.6, alpha: 1)
         label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
         label.lineBreakMode = .byClipping
@@ -161,6 +162,13 @@ final class NewsFeedCodeCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        backgroundColor = .clear
+        selectionStyle = .none
+        
+        cardView.layer.cornerRadius = 10
+        cardView.clipsToBounds = true
+        
         overlayFirstLayer()
         overlaySecondLayer()
         overlayThirdLayerOnTopView()
@@ -171,11 +179,18 @@ final class NewsFeedCodeCell: UITableViewCell {
     }
     
     func set(viewModel: FeedCellViewModel) {
-
+        
         iconImageView.set(imageURL: viewModel.iconUrlString)
         nameLabel.text = viewModel.name
         dateLabel.text = viewModel.date
         postLabel.text = viewModel.text
+        likesLabel.text = viewModel.likes
+        commentsLabel.text = viewModel.comments
+        sharesLabel.text = viewModel.shares
+        viewsLabel.text = viewModel.views
+        
+
+       
         postLabel.frame = viewModel.sizes.postLabelFrame
         postImageView.frame = viewModel.sizes.attacmentFrame
         bottomView.frame = viewModel.sizes.bottomViewFrame
@@ -201,7 +216,7 @@ final class NewsFeedCodeCell: UITableViewCell {
         viewsView.addSubview(viewsImage)
         viewsView.addSubview(viewsLabel)
         
-        helpInFourthLayer(view: likesLabel, imageView: likesImage, label: likesLabel)
+        helpInFourthLayer(view: likesView, imageView: likesImage, label: likesLabel)
         helpInFourthLayer(view: commentsView, imageView: commentsImage, label: commentsLabel)
         helpInFourthLayer(view: sharesView, imageView: sharesImage, label: sharesLabel)
         helpInFourthLayer(view: viewsView, imageView: viewsImage, label: viewsLabel)
