@@ -9,9 +9,15 @@
 import Foundation
 import UIKit
 
+protocol NewsFeedCodeCellDelegate: class {
+    func revealPost(for cell: NewsFeedCodeCell)
+}
+
 final class NewsFeedCodeCell: UITableViewCell {
     
     static let reuseId = "NewsFeedCodeCell"
+    
+    weak var delegate: NewsFeedCodeCellDelegate?
     
     let cardView: UIView = {
         let view = UIView()
@@ -32,6 +38,16 @@ final class NewsFeedCodeCell: UITableViewCell {
         label.font = Constants.postLabelFont
         label.textColor = #colorLiteral(red: 0.227329582, green: 0.2323184013, blue: 0.2370472848, alpha: 1)
         return label
+    }()
+    
+    let moreTextButton: UIButton = {
+        let button = UIButton()
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .medium)
+        button.setTitleColor(#colorLiteral(red: 0.4, green: 0.6235294118, blue: 0.831372549, alpha: 1), for: .normal)
+        button.contentHorizontalAlignment = .left
+        button.contentVerticalAlignment = .center
+        button.setTitle("Показать полностью...", for: .normal)
+        return button
     }()
     
     let postImageView: WebImageView = {
@@ -169,6 +185,8 @@ final class NewsFeedCodeCell: UITableViewCell {
         cardView.layer.cornerRadius = 10
         cardView.clipsToBounds = true
         
+        moreTextButton.addTarget(self, action: #selector(moreTextButtonTapped), for: .touchUpInside)
+        
         overlayFirstLayer()
         overlaySecondLayer()
         overlayThirdLayerOnTopView()
@@ -176,6 +194,11 @@ final class NewsFeedCodeCell: UITableViewCell {
         overlayFourthLayerOnBottomViewViews()
 
         
+    }
+    
+    @objc func moreTextButtonTapped() {
+        delegate?.revealPost(for: self)
+        print("123")
     }
     
     func set(viewModel: FeedCellViewModel) {
@@ -194,6 +217,7 @@ final class NewsFeedCodeCell: UITableViewCell {
         postLabel.frame = viewModel.sizes.postLabelFrame
         postImageView.frame = viewModel.sizes.attacmentFrame
         bottomView.frame = viewModel.sizes.bottomViewFrame
+        moreTextButton.frame = viewModel.sizes.moreTextButtonFrame
         
         if let photoAttacment = viewModel.photoAttacment {
             postImageView.isHidden = false
@@ -285,6 +309,7 @@ final class NewsFeedCodeCell: UITableViewCell {
   private  func overlaySecondLayer(){
         cardView.addSubview(topView)
         cardView.addSubview(postLabel)
+        cardView.addSubview(moreTextButton)
         cardView.addSubview(postImageView)
         cardView.addSubview(bottomView)
         
