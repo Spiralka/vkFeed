@@ -33,13 +33,17 @@ class NewsFeedInteractor: NewsFeedBusinessLogic {
     case .getNewsFeed:
         fetcher.getFeed { [weak self] (feedResponse) in
             self?.feedResponse = feedResponse
+            self?.presentFeed()
         }
    
     case .revealPostIds(let postId):
         revealedPostIds.append(postId)
-        guard let feedRsponse = feedResponse else { return }
-        presenter?.presentData(response: .presentNewsFeed(feed: feedResponse, revealdedPostIds: revealedPostIds))
-        print("111")
+       presentFeed()
     }
  }
+    
+    private func presentFeed() {
+        guard let feedRsponse = feedResponse else { return }
+        presenter?.presentData(response: .presentNewsFeed(feed: feedResponse!, revealdedPostIds: revealedPostIds))
+    }
 }
