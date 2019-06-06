@@ -64,7 +64,7 @@ class NewsFeedPresenter: NewsFeedPresentationLogic {
                                        comments: String(feedItem.comments?.count ?? 0),
                                        shares: String(feedItem.reposts?.count ?? 0),
                                        views: String(feedItem.views?.count ?? 0),
-                                       photoAttacment: photoAttachment,
+                                       photoAttacments: photoAttachment,
                                        sizes: sizes)
         
     }
@@ -87,6 +87,13 @@ class NewsFeedPresenter: NewsFeedPresentationLogic {
         return FeedViewModel.FeedCellPhotoAttachment.init(photoUrlString: firstPhoto.srcBIG,
                                                           width: firstPhoto.width,
                                                           height: firstPhoto.height)
+    }
+    
+    private func photoAttachments(feedItem: FeedItem) -> [FeedViewModel.FeedCellPhotoAttachment] {
+        guard let attachments = feedItem.attachments else { return []}
+        return attachments.compactMap({ (attacment) -> FeedViewModel.FeedCellPhotoAttachment? in
+            guard let photo = attacment.photo else { return nil }
+        })
     }
 }
 
