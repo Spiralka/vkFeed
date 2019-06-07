@@ -219,9 +219,16 @@ final class NewsFeedCodeCell: UITableViewCell {
         bottomView.frame = viewModel.sizes.bottomViewFrame
         moreTextButton.frame = viewModel.sizes.moreTextButtonFrame
         
-        if let photoAttacment = viewModel.photoAttacments {
+//        if let photoAttacment = viewModel.photoAttacment {
+//            postImageView.isHidden = false
+//            postImageView.set(imageURL: photoAttacment.photoUrlString)
+//        } else {
+//            postImageView.isHidden = true
+//        }
+        
+        if let photoAttachment = viewModel.photoAttacments.first, viewModel.photoAttacments.count == 1 {
             postImageView.isHidden = false
-            postImageView.set(imageURL: photoAttacment.photoUrlString)
+            postImageView.set(imageURL: photoAttachment.photoUrlString)
         } else {
             postImageView.isHidden = true
         }
