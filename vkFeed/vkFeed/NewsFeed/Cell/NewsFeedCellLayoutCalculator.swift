@@ -89,6 +89,9 @@ final class FeedCellLayoutCalculator: FeedCellLayoutCalculatorProtocol {
             let ratio = CGFloat(photoHeight / photoWidtht)
             if photoAttachments.count == 1 {
                 attacmentFrame.size = CGSize(width: cardViewWidth, height: cardViewWidth * ratio)
+            } else if photoAttachments.count > 1 {
+                attacmentFrame.size = CGSize(width: cardViewWidth, height: cardViewWidth * ratio)
+
             }
         }
         

@@ -50,6 +50,8 @@ final class NewsFeedCodeCell: UITableViewCell {
         return button
     }()
     
+    let galleryCollectionView = GalleryCollectionView()
+    
     let postImageView: WebImageView = {
         let imageView = WebImageView()
         imageView.backgroundColor = #colorLiteral(red: 0.8901960784, green: 0.8980392157, blue: 0.9098039216, alpha: 1)
@@ -84,7 +86,7 @@ final class NewsFeedCodeCell: UITableViewCell {
         return label
     }()
     
-    //3 слой buttomView
+    //3 слой bottomView
     
     let likesView: UIView = {
         let view = UIView()
@@ -215,22 +217,24 @@ final class NewsFeedCodeCell: UITableViewCell {
 
        
         postLabel.frame = viewModel.sizes.postLabelFrame
-        postImageView.frame = viewModel.sizes.attacmentFrame
         bottomView.frame = viewModel.sizes.bottomViewFrame
         moreTextButton.frame = viewModel.sizes.moreTextButtonFrame
         
-//        if let photoAttacment = viewModel.photoAttacment {
-//            postImageView.isHidden = false
-//            postImageView.set(imageURL: photoAttacment.photoUrlString)
-//        } else {
-//            postImageView.isHidden = true
-//        }
-        
+
         if let photoAttachment = viewModel.photoAttacments.first, viewModel.photoAttacments.count == 1 {
-            postImageView.isHidden = false
             postImageView.set(imageURL: photoAttachment.photoUrlString)
+            postImageView.isHidden = false
+            galleryCollectionView.isHidden = true
+            postImageView.frame = viewModel.sizes.attacmentFrame
+        } else if viewModel.photoAttacments.count > 1 {
+            galleryCollectionView.frame = viewModel.sizes.attacmentFrame
+            postImageView.isHidden = true
+            galleryCollectionView.isHidden = false
+            galleryCollectionView.set(photos: viewModel.photoAttacments)
         } else {
             postImageView.isHidden = true
+            galleryCollectionView.isHidden = true
+
         }
     }
     
@@ -318,6 +322,7 @@ final class NewsFeedCodeCell: UITableViewCell {
         cardView.addSubview(postLabel)
         cardView.addSubview(moreTextButton)
         cardView.addSubview(postImageView)
+        cardView.addSubview(galleryCollectionView)
         cardView.addSubview(bottomView)
         
         topView.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 8).isActive = true
