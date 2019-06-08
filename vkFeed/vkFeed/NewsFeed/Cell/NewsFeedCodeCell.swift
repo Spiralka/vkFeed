@@ -207,6 +207,10 @@ final class NewsFeedCodeCell: UITableViewCell {
         
         iconImageView.set(imageURL: viewModel.iconUrlString)
         nameLabel.text = viewModel.name
+        
+        if nameLabel.text == "NR" {
+            print(viewModel.iconUrlString)
+        }
         dateLabel.text = viewModel.date
         postLabel.text = viewModel.text
         likesLabel.text = viewModel.likes
