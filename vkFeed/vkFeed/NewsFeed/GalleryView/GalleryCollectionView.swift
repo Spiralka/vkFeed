@@ -20,7 +20,10 @@ class GalleryCollectionView: UICollectionView, UICollectionViewDelegate, UIColle
         super.init(frame: .zero, collectionViewLayout: rowLayout)
         delegate = self
         dataSource = self
-        backgroundColor = .lightGray
+        backgroundColor = .white
+        
+        showsHorizontalScrollIndicator = false
+        showsVerticalScrollIndicator = false
         register(GalleryCollectionViewCell.self, forCellWithReuseIdentifier: GalleryCollectionViewCell.reuseId)
         
         if let rowLayout = collectionViewLayout as? RowLayout {
