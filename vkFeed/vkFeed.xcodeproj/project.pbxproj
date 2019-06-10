@@ -16,6 +16,8 @@
 		CF149850229C7417005F9DA5 /* NewsFeedViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF14984F229C7417005F9DA5 /* NewsFeedViewController.storyboard */; };
 		CF149853229D47BC005F9DA5 /* NewsFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF149852229D47BC005F9DA5 /* NewsFeedCell.swift */; };
 		CF149855229D47F3005F9DA5 /* NewsFeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF149854229D47F3005F9DA5 /* NewsFeedCell.xib */; };
+		CF35FE6522AE7E7C0084D8CF /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF35FE6422AE7E7C0084D8CF /* TitleView.swift */; };
+		CF35FE6722AE7F1D0084D8CF /* InsetableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF35FE6622AE7F1C0084D8CF /* InsetableTextField.swift */; };
 		CF59D706229AE22D0079E462 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF59D705229AE22D0079E462 /* AppDelegate.swift */; };
 		CF59D70D229AE22F0079E462 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF59D70C229AE22F0079E462 /* Assets.xcassets */; };
 		CF59D710229AE22F0079E462 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF59D70E229AE22F0079E462 /* LaunchScreen.storyboard */; };
@@ -49,6 +51,8 @@
 		CF14984F229C7417005F9DA5 /* NewsFeedViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewsFeedViewController.storyboard; sourceTree = "<group>"; };
 		CF149852229D47BC005F9DA5 /* NewsFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedCell.swift; sourceTree = "<group>"; };
 		CF149854229D47F3005F9DA5 /* NewsFeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsFeedCell.xib; sourceTree = "<group>"; };
+		CF35FE6422AE7E7C0084D8CF /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		CF35FE6622AE7F1C0084D8CF /* InsetableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetableTextField.swift; sourceTree = "<group>"; };
 		CF59D702229AE22D0079E462 /* vkFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vkFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF59D705229AE22D0079E462 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF59D70C229AE22F0079E462 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -89,6 +93,7 @@
 		CF149840229C6C14005F9DA5 /* NewsFeed */ = {
 			isa = PBXGroup;
 			children = (
+				CFEE929E22AE7E3F006C4EF3 /* TitleView */,
 				CFF1CF2F22AAC362006E0CE9 /* GalleryView */,
 				CF149851229D47A9005F9DA5 /* Cell */,
 				CF14984F229C7417005F9DA5 /* NewsFeedViewController.storyboard */,
@@ -192,6 +197,15 @@
 				CF916F0F229C6287009AA225 /* FeedResponse.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		CFEE929E22AE7E3F006C4EF3 /* TitleView */ = {
+			isa = PBXGroup;
+			children = (
+				CF35FE6422AE7E7C0084D8CF /* TitleView.swift */,
+				CF35FE6622AE7F1C0084D8CF /* InsetableTextField.swift */,
+			);
+			path = TitleView;
 			sourceTree = "<group>";
 		};
 		CFF1CF2F22AAC362006E0CE9 /* GalleryView */ = {
@@ -313,6 +327,7 @@
 				CF916F12229C6638009AA225 /* NetworkDataFetcher.swift in Sources */,
 				CF149849229C6C4E005F9DA5 /* NewsFeedWorker.swift in Sources */,
 				CF718EDC22A0190D0059A762 /* Constants.swift in Sources */,
+				CF35FE6522AE7E7C0084D8CF /* TitleView.swift in Sources */,
 				CF718ED2229D716F0059A762 /* WebImageView.swift in Sources */,
 				CF718EDA22A00CF20059A762 /* Constraints.swift in Sources */,
 				CF14984A229C6C4E005F9DA5 /* NewsFeedRouter.swift in Sources */,
@@ -323,6 +338,7 @@
 				CFF1CF3122AAC377006E0CE9 /* GalleryCollectionView.swift in Sources */,
 				CF14984C229C6C4E005F9DA5 /* NewsFeedViewController.swift in Sources */,
 				CF718ED4229ECBD00059A762 /* NewsFeedCellLayoutCalculator.swift in Sources */,
+				CF35FE6722AE7F1D0084D8CF /* InsetableTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
