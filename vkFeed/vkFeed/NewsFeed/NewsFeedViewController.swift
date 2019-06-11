@@ -50,6 +50,7 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic, NewsFeedCo
     table.register(UINib(nibName: "NewsFeedCell", bundle: nil), forCellReuseIdentifier: NewsFeedCell.reuseId)
     table.register(NewsFeedCodeCell.self, forCellReuseIdentifier: NewsFeedCodeCell.reuseId)
     interactor?.makeRequest(request: .getNewsFeed)
+    interactor?.makeRequest(request: .getUser)
     
     table.separatorStyle = .none
     table.backgroundColor = .clear
@@ -71,6 +72,9 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic, NewsFeedCo
     case .displayNewsFeed(let feedViewModel):
         self.feedViewModel = feedViewModel
         table.reloadData()
+        
+    case .displayUser(let userViewModel):
+        titleView.set(userViewModel: userViewModel)
     }
   }
     

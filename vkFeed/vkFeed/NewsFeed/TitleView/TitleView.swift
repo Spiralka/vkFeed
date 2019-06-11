@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 
+protocol TitleViewViewModal {
+    var photoUrlString: String? { get }
+}
+
 class TitleView: UIView {
     
     private var myTextField = InsetableTextField()
@@ -30,7 +34,9 @@ class TitleView: UIView {
         
         makeConstreaints()
     }
-    
+    func set(userViewModel: TitleViewViewModal) {
+        myAvatarView.set(imageURL: userViewModel.photoUrlString)
+    }
     private func makeConstreaints() {
         myAvatarView.anchor(top: topAnchor,
                             leading: nil,

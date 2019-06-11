@@ -10,14 +10,19 @@ import Foundation
 
 protocol DataFetcher {
     func getFeed(response: @escaping (FeedResponse?) -> Void)
+    func getUser(response: @escaping (UserResponse?) -> Void)
+
 }
 
 struct NetwoorkDataFetcher: DataFetcher {
+  
+    private let authService: AuthService
     
     let networking: Networking
     
-    init(networking: Networking) {
+    init(networking: Networking, authService: AuthService = AppDelegate.shared().authService) {
         self.networking = networking
+        self.authService = authService
     }
     
     func getFeed(response: @escaping (FeedResponse?) -> Void) {
@@ -31,6 +36,22 @@ struct NetwoorkDataFetcher: DataFetcher {
             response(decoded?.response)
         }
     }
+    
+    func getUser(response: @escaping (UserResponse?) -> Void) {
+        guard let userId = authService.userId else { return }
+        let params = [ "user_ids" : userId, "fields": "photo_100"]
+        networking.request(path: API.user, params: params) { (data, error) in
+            if let error = error {
+                print(error.localizedDescription, #function)
+                response(nil)
+            }
+            
+            let decoded = self.decodeJSON(type: UserResponseWrapped.self, from: data)
+            response(decoded?.response.first)
+        }
+
+    }
+    
     
     private func decodeJSON<T: Decodable>(type: T.Type, from: Data?) -> T? {
         let decoder = JSONDecoder()
