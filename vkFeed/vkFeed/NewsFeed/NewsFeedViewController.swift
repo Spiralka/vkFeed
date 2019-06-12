@@ -22,6 +22,11 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic, NewsFeedCo
     @IBOutlet weak var table: UITableView!
     
     private var titleView = TitleView()
+    private var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        return refreshControl
+    }()
     
   // MARK: Setup
   
@@ -47,13 +52,11 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic, NewsFeedCo
     super.viewDidLoad()
     setup()
     setupTopBars()
-    table.register(UINib(nibName: "NewsFeedCell", bundle: nil), forCellReuseIdentifier: NewsFeedCell.reuseId)
-    table.register(NewsFeedCodeCell.self, forCellReuseIdentifier: NewsFeedCodeCell.reuseId)
+   
     interactor?.makeRequest(request: .getNewsFeed)
     interactor?.makeRequest(request: .getUser)
     
-    table.separatorStyle = .none
-    table.backgroundColor = .clear
+    setupTable()
     view.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
   }
     
@@ -62,6 +65,23 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic, NewsFeedCo
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationItem.titleView = titleView
         
+    }
+    
+    private func setupTable() {
+        
+//        let topInset: CGFloat = 2
+//        table.contentInset.top = topInset
+        table.separatorStyle = .none
+        table.backgroundColor = .clear
+        table.register(UINib(nibName: "NewsFeedCell", bundle: nil), forCellReuseIdentifier: NewsFeedCell.reuseId)
+        table.register(NewsFeedCodeCell.self, forCellReuseIdentifier: NewsFeedCodeCell.reuseId)
+        
+        table.addSubview(refreshControl)
+    }
+    
+    @objc private func refresh() {
+        print("hello")
+        interactor?.makeRequest(request: .getNewsFeed)
     }
   
   func displayData(viewModel: NewsFeed.Model.ViewModel.ViewModelData) {
@@ -72,7 +92,7 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic, NewsFeedCo
     case .displayNewsFeed(let feedViewModel):
         self.feedViewModel = feedViewModel
         table.reloadData()
-        
+        refreshControl.endRefreshing()
     case .displayUser(let userViewModel):
         titleView.set(userViewModel: userViewModel)
     }

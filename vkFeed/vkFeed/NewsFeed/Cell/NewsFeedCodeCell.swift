@@ -200,17 +200,12 @@ final class NewsFeedCodeCell: UITableViewCell {
     
     @objc func moreTextButtonTapped() {
         delegate?.revealPost(for: self)
-        print("123")
     }
     
     func set(viewModel: FeedCellViewModel) {
         
         iconImageView.set(imageURL: viewModel.iconUrlString)
         nameLabel.text = viewModel.name
-        
-        if nameLabel.text == "NR" {
-            print(viewModel.iconUrlString)
-        }
         dateLabel.text = viewModel.date
         postLabel.text = viewModel.text
         likesLabel.text = viewModel.likes
