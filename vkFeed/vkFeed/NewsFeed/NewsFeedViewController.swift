@@ -98,6 +98,12 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic, NewsFeedCo
     }
   }
     
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if scrollView.contentOffset.y > scrollView.contentSize.height / 2 {
+            print("1231231231")
+        }
+    }
+    
     //MARK:  delegate
 
     
