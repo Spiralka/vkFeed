@@ -57,7 +57,7 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic, NewsFeedCo
     interactor?.makeRequest(request: .getUser)
     
     setupTable()
-    view.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
+    view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
   }
     
     private func setupTopBars() {
@@ -100,7 +100,6 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic, NewsFeedCo
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if scrollView.contentOffset.y > scrollView.contentSize.height / 2 {
-            print("1231231231")
         }
     }
     

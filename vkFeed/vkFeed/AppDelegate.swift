@@ -27,9 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AuthServiceDelegate {
         authService.delegate = self
         
         let authVC: AuthViewController = AuthViewController.loadFromStoryboard()
-        
         window?.rootViewController = authVC
         window?.makeKeyAndVisible()
+        
         return true
     }
     
@@ -70,7 +70,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AuthServiceDelegate {
     }
     
     func authServiceSignIn() {
-        print(#function)
         let feedVC: NewsFeedViewController = NewsFeedViewController.loadFromStoryboard()
         let navVC = UINavigationController(rootViewController: feedVC)
         window?.rootViewController = navVC
